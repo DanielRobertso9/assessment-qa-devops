@@ -10,7 +10,6 @@ var rollbar = new Rollbar({
   captureUnhandledRejections: true,
 })
 
-
 const playerRecord = {
   wins: 0,
   losses: 0,
@@ -19,6 +18,8 @@ const app = express();
 
 app.use(cors())
 app.use(express.json());
+
+app.use(express.static(`${__dirname}/public`))
 
 // Add up the total health of all the robots
 const calculateTotalHealth = (robots) =>
