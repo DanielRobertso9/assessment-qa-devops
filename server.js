@@ -3,6 +3,8 @@ const bots = require("./src/botsData");
 const shuffle = require("./src/shuffle");
 const cors = require("cors")
 
+app.use(express.static(`${__dirname}/public`))
+
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
   accessToken: '8e4833bb207a45cf87558bfb8a459b02',
