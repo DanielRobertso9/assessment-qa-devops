@@ -3,6 +3,11 @@ const bots = require("./src/botsData");
 const shuffle = require("./src/shuffle");
 const cors = require("cors")
 
+const app = express();
+
+app.use(cors())
+app.use(express.static(`${__dirname}/public`))
+
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
   accessToken: '8e4833bb207a45cf87558bfb8a459b02',
@@ -14,11 +19,6 @@ const playerRecord = {
   wins: 0,
   losses: 0,
 };
-const app = express();
-
-app.use(cors())
-
-app.use(express.static(`${__dirname}/public`))
 
 // Add up the total health of all the robots
 const calculateTotalHealth = (robots) =>
