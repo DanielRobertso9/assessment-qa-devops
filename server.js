@@ -70,7 +70,7 @@ app.get("/api/robots/shuffled", (req, res) => {
 
 app.post("/api/duel", (req, res) => {
   try {
-    rollbar.info('User Started Duel')
+    // rollbar.info('User Started Duel')
     const { compDuo, playerDuo } = req.body;
 
     const { compHealth, playerHealth } = calculateHealthAfterAttack({
